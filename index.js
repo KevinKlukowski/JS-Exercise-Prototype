@@ -116,9 +116,22 @@ function Car(model, milesPerGallon) {
 */
 function Baby(name, age, favoriteToy) {
   Person.call(this, favoriteToy);
+  this.favoriteToy = favoriteToy;
+  this.name = name;
+  this.age = age;
+}
+//tells child to inherit parents methods
+Baby.prototype= Object.create(Person.prototype);
+
+Person.prototype.play = function () {
+  return `Playing with ${this.favoriteToy}`;
 }
 
-Baby.prototype= Object.create(Person.prototype);
+const isaiah = new Baby({name: 'Isaiah', age: 9, favoriteToy: 'banana'});
+
+
+
+
 
 /* 
   TASK 4
