@@ -115,11 +115,12 @@ function Car(model, milesPerGallon) {
         + Should return a string "Playing with x", x being the favorite toy.
 */
 function Baby(name, age, favoriteToy) {
-  Person.call(this, favoriteToy);
+  Person.call(this, favoriteToy); // binds favoriteToy to person
   this.favoriteToy = favoriteToy;
   this.name = name;
   this.age = age;
 }
+
 //tells child to inherit parents methods
 Baby.prototype= Object.create(Person.prototype);
 
@@ -130,17 +131,14 @@ Person.prototype.play = function () {
 const isaiah = new Baby({name: 'Isaiah', age: 9, favoriteToy: 'banana'});
 
 
-
-
-
 /* 
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. global binding- when the this keyword is not assigned to another value, it is automatically assigned to the window and will log the window in the console
+  2. Implicit Binding- calling a function preceded by a dot assigns the 'this' keyword to that object
+  3. New binding- using the new keyword when declaring a new variable will change the value of 'this' to whatever is called
+  4. Explicit binding- you can change 
 */
 
 
